@@ -1017,3 +1017,138 @@ icon {
   color: #09BB07;
   white-space: nowrap;
 }
+
+
+
+
+.base-list-wrapper{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  line-height:1;
+  font-size: 14px;
+  font-family: "宋体"；
+}
+.portal-list-item{
+  background-color:#fff;
+  position:relative;
+  width:100%;
+  margin-bottom:10px;
+}
+.bg_c{
+  width:100%;
+  height: 5px;
+  background-color:#F0EFF0;
+}
+.portal-list-item .std-goods-image{
+  position:relative;
+  width:80%;
+  align-self: center;
+  height:auto;
+  overflow:hidden;
+  margin: 0 auto;
+}
+image{  
+  /*width:300px;
+  height:200px;
+  align-self: center;*/
+  display: inline-block;
+}
+.portal-list-item .goods-name{
+  font-size:14px;
+  width:90%;
+  height:40px;
+  color:#151516;
+  margin: 0px auto;
+  overflow:hidden;
+  line-height:20px;
+  -webkit-line-clamp:2;
+  vertical-align:middle;
+}
+.portal-list-item .detail{
+  position:relative;
+  width:95%;
+  height:22px;
+  line-height: 22px;
+  margin:5px auto;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  display:-webkit-flex;
+  -webkit-box-pack:justify;
+  -ms-flex-pack:justify;
+  justify-content:space-between;
+  -webkit-justify-content:space-between;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center;
+  -webkit-align-items:center;
+}
+.portal-list-item .detail .left-side{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  display:-webkit-flex;
+  -webkit-box-pack:start;
+  -ms-flex-pack:start;
+  justify-content:flex-start;
+  -webkit-justify-content:flex-start;
+  -webkit-box-align:end;
+  -ms-flex-align:end;
+  align-items:flex-end;
+  -webkit-align-items:flex-end;  
+}
+.portal-list-item .detail .left-side .sale-price{
+  font-size:18px;
+  color:#e02e24;
+  margin-right:2px;
+  font-weight:700;
+}
+.portal-list-item .detail .left-side .sale-price i{
+  font-size:14px;
+}
+.portal-list-item .detail .left-side .group-desc{
+  font-size:10px;
+  color:#9c9c9c;
+  padding-bottom:1px;
+}
+.portal-list-item .detail .right-side{
+  position:relative;
+  height:100%;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  display:-webkit-flex;
+  -webkit-box-pack:end;
+  -ms-flex-pack:end;
+  justify-content:flex-end;
+  -webkit-justify-content:flex-end;
+  -webkit-box-align:center;
+  -ms-flex-align:center;
+  align-items:center;
+  -webkit-align-items:center;
+}
+/*.portal-list-item .detail .right-side .local-groups{
+  height:20px;
+  margin-right:10px;
+}
+.portal-list-item .detail .right-side .local-groups .avatar{
+  width:.32rem;
+  height:.32rem;
+}
+.portal-list-item .detail .right-side .local-groups .avatar:nth-child(2){
+  margin-left:-.09rem;
+}*/
+.portal-list-item .detail .right-side .enter-button{
+  background-position:100px 50px;
+  position:relative;
+  width:80px;
+  height:22px;
+  line-height:22px;
+  text-align:center;
+  border-radius:4px;
+  font-size:14px;
+  color:#fff;
+  background-color:#e02e24;
+  vertical-align:middle;
+}

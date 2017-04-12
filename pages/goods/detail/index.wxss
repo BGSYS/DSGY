@@ -52,3 +52,86 @@
     line-height: 40px;
     font-size: 12px;
 }
+
+
+
+image{
+    width:50px;
+    height: 20px;
+}
+.goods-bottom-bar{
+    position:fixed;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    width:100%;
+    max-width:640px;
+    height:50px;
+    bottom:0;
+    background-color:#fff;
+    z-index:10001;
+}
+.goods-buy-button span:before,.goods-chat-button span:before,.goods-chat-button-disable span:before,.goods-home-button span:before,.goods-like-button span:before,.goods-mall-button span:before,.goods-unlike-button span:before{
+    content:"";
+    top:20px;
+}
+.goods-buy-button span,.goods-chat-button span,.goods-chat-button-disable span,.goods-home-button span,.goods-like-button span,.goods-mall-button span,.goods-unlike-button span{
+    line-height:20px;
+    color:#58595b;
+    bottom:3px;
+    right:0;
+    text-align:center;
+    display:block;
+}
+.goods-direct-btn{
+    width: 160px;
+    font-size: 0;
+    background-color: #f3aba7;
+}
+.goods-direct-btn,.goods-group-btn {
+    height: 100%;
+    padding-top: 10px;
+    text-align: center;
+    position: relative;
+    color: #fff;
+}
+.goods-direct-btn span{
+    position:relative;
+    display:block;
+    line-height:1;
+    font-size:14px;
+    color:#fff;
+}
+.goods-direct-btn .goods-buy-price{
+    margin-bottom:3px;
+    font-weight:500;
+    font-size:14px;
+}
+.goods-direct-btn .goods-buy-price i{
+    margin:0 auto;
+    font-size:14px;
+}
+.goods-group-btn{
+    -webkit-box-flex:1;
+    -ms-flex:1;
+    flex:1;
+    width:0;
+    font-size:0;
+    background-color:#e02e24;
+}
+.goods-group-btn span{
+    position:relative;
+    display:block;
+    line-height:1;
+    font-size:14px;
+    color:#fff;
+}
+.goods-group-btn .goods-buy-price{
+    margin-bottom:3px;
+    font-weight:500;
+    font-size:14px;
+}
+.goods-group-btn .goods-buy-price i{
+    margin:0 auto;
+    font-size:14px;
+}

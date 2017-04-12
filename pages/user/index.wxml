@@ -1,31 +1,153 @@
 <view class="container">
-	<view  bindtap="bindViewTap" class="userinfo">
-		<image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
-		<text class="userinfo-nickname">{{ userInfo.nickName }}</text>
-	</view>
-	<view class="info_list">
-		<view class="weui-cells">
-			<navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{ items }}" wx:key="" data-path="{{ item.path }}" data-index="{{ index }}" bindtap="navigateTo">
-                <view class="weui-cell__hd">
-                    <image src="{{ item.icon }}" style="margin-bottom: 2px;margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-                </view>
-                <view class="weui-cell__bd">{{ item.text }}</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access">
-                	<text wx:if="{{ index === 2 }}">{{ item.path }}</text>
-                </view>
-            </navigator>
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{ userInfo.nickName }}</text>
+  </view>
+  <!--<view class="info_list">
+    <view class="weui-cells">
+      <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{ items }}" wx:key="" data-path="{{ item.path }}" data-index="{{ index }}" bindtap="navigateTo">
+        <view class="weui-cell__hd">
+          <image src="{{ item.icon }}" style="margin-bottom: 2px;margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
         </view>
-        <view class="weui-cells">
-            <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{ settings }}" wx:key="" data-path="{{ item.path }}" data-index="{{ index }}" bindtap="bindtap">
-                <view class="weui-cell__hd">
-                    <image src="{{ item.icon }}" style="margin-bottom: 2px;margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
-                </view>
-                <view class="weui-cell__bd">{{ item.text }}</view>
-                <view class="weui-cell__ft weui-cell__ft_in-access">
-                    <text wx:if="{{ index === 0 }}">{{ item.path }}</text>
-                </view>
-            </navigator>
+        <view class="weui-cell__bd">{{ item.text }}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">
+          <text wx:if="{{ index === 2 }}">{{ item.path }}</text>
         </view>
+      </navigator>
     </view>
-    <view class="logout" bindtap="logout">登出账号</view>
+    <view class="weui-cells">
+      <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for="{{ settings }}" wx:key="" data-path="{{ item.path }}" data-index="{{ index }}" bindtap="bindtap">
+        <view class="weui-cell__hd">
+          <image src="{{ item.icon }}" style="margin-bottom: 2px;margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">{{ item.text }}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access">
+          <text wx:if="{{ index === 0 }}">{{ item.path }}</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class="logout" bindtap="logout">登出账号</view>-->
+</view>
+
+
+
+<view class="personal-orders">
+  <view class="p-orders">
+    <span class="p-all-orders">我的订单</span> 
+    <span class="p-all-orders-span">查看全部</span> 
+  </view>
+  <view class="personal-wrapper-1">
+    <view class="p-wrapper-1-item">
+      <view class="pic p-unpaid"></view>
+      <p class="p-wrap-1-title">待付款</p>
+    </view>
+    <view class="p-wrapper-1-item" ms-click="gotoOrders(5)">
+      <view class="pic p-grouping "></view>
+      <p class="p-wrap-1-title">待成团</p>
+    </view>
+    <view class="p-wrapper-1-item" ms-click="gotoOrders(2)">
+      <view class="pic p-unshipping"></view>
+      <p class="p-wrap-1-title">待发货</p>
+    </view>
+    <view class="p-wrapper-1-item" ms-click="gotoOrders(3)">
+      <view class="pic p-unreceived"></view>
+      <p class="p-wrap-1-title">待收货</p>
+    </view>
+    <view class="p-wrapper-1-item" ms-click="gotoOrders(4)">
+      <view class="pic p-unrated"></view>
+      <p class="p-wrap-1-title">待评价</p>
+    </view>
+  </view>
+</view>
+
+
+<view class="personal-orders">
+  <view class="p-orders">
+    <span class="p-all-orders">租借信息</span> 
+    <span class="p-all-orders-span">查看全部</span> 
+  </view>
+  <view class="personal-wrapper-1">
+    <view class="p-wrapper-1-item">
+      <view class="pic p-unpaid"></view>
+      <p class="p-wrap-1-title">待付款</p>
+    </view>
+    <view class="p-wrapper-1-item" ms-click="gotoOrders(5)">
+      <view class="pic p-grouping "></view>
+      <p class="p-wrap-1-title">待成团</p>
+    </view>
+    <view class="p-wrapper-1-item" ms-click="gotoOrders(2)">
+      <view class="pic p-unshipping"></view>
+      <p class="p-wrap-1-title">待发货</p>
+    </view>
+    <view class="p-wrapper-1-item" ms-click="gotoOrders(3)">
+      <view class="pic p-unreceived"></view>
+      <p class="p-wrap-1-title">待收货</p>
+    </view>
+    <view class="p-wrapper-1-item" ms-click="gotoOrders(4)">
+      <view class="pic p-unrated"></view>
+      <p class="p-wrap-1-title">待评价</p>
+    </view>
+  </view>
+</view>
+
+<view class="personal-wrapper-2">
+  <view class="p-wrapper-2-item" ms-click="gotoChatList">
+    <view class="pic2 p-messages"></view>
+    <p class="p-wrap-2-title">我的消息</p>
+  </view>
+  <view class="p-wrapper-2-item" ms-click="gotoCoupons">
+    <view class="pic2 p-coupons"></view>
+    <p class="p-wrap-2-title">我的优惠券</p>
+  </view>
+  <view class="p-wrapper-2-item" ms-click="gotoLikes">
+    <view class="pic2 p-likes"></view>
+    <p class="p-wrap-2-title">我的收藏</p>
+  </view>
+  <view class="p-wrapper-2-item" ms-click="gotoComplaintList">
+    <view class="pic2 p-after-sales">
+      <redPoint ms-if="hasUnreadAfterSales" style="display:block;right:-0.02rem"></redPoint>
+    </view>
+    <p class="p-wrap-2-title">退款/售后</p>
+  </view>
+</view>
+
+<!--<view class="personal-download-app" ms-if="showAppDownload" ms-click="gotoAppDownload">
+  <span class="p-download-txt">App里确认收货就有红包</span> 
+  <span class="p-download-btn">立即前往</span> 
+</view>-->
+<view class="personal-list">
+  <ul>
+    <!--<li ms-if="showInvite" ms-click="gotoInvite">
+      <span class="p-invite-txt">邀友有奖</span> 
+      <span class="p-invite-btn">最高可得20元</span> 
+      <img ms-src="arrowImg" class="p-arrow-img"></img>
+    </li>-->
+    <li ms-click="gotoLotteries">
+      <p class="p-small-lotteries">
+        <text class="st3">我的抽奖</text>
+      </p>
+    </li>
+    <li ms-click="gotoGroups(3)">
+      <p class="p-groups">
+        <text class="st3">我的拼团</text>
+      </p>
+    </li>
+    <li ms-click="gotoGroupFree">
+      <div class="p-group-free-icon"></div>
+      <p class="p-group-free">
+        <text class="st3">我的免单券</text>
+      </p>
+    </li>
+    <li data-path="/pages/address/list/index" data-index="1" bindtap="navigateTo">
+      <p class="p-addresses">
+        <text class="st3">收货地址</text>
+      </p>
+    </li>
+    <li ms-click="gotoSetting">
+      <p class="p-setting">
+        <text class="st3">设置</text>
+      </p>
+    </li>
+  </ul>
 </view>

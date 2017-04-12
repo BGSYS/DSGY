@@ -18,7 +18,7 @@ Page({
         })
     },
     onLoad(option) {
-        this.goods = App.HttpResource('/goods/:id', {id: '@id'})
+        this.goods = App.HttpResource('goodsInfo/getGoodsInfo', {id: '@id'})
         this.setData({
             id: option.id
         })
@@ -27,7 +27,7 @@ Page({
         this.getDetail(this.data.id)
     },
     addCart(e) {
-        const goods = this.data.goods.item._id
+        const goods = this.data.goods.item;
         App.HttpService.addCartByUser(goods)
         .then(data => {
             console.log(data)
@@ -57,13 +57,13 @@ Page({
     	// App.HttpService.getDetail(id)
         this.goods.getAsync({id: id})
         .then(data => {
-        	console.log(data)
-        	if (data.meta.code == 0) {
-                data.data.images.forEach(n => n.path = App.renderImage(n.path))
+        	if (data.goodsid==this.data.id) {//.meta.code == 0
+                data.imgs=[{path:data.goodsimg1},{path:data.goodsimg2},{path:data.goodsimg3},{path:data.goodsimg4},{path:data.goodsimg5}];
+                data.imgs.forEach(n => n.path= App.renderImage(n.path));
         		this.setData({
-                    'goods.item': data.data, 
-                    total: data.data.images.length, 
-                })
+                    'goods.item': data, 
+                    total: data.imgs.length,
+                });
         	}
         })
     },

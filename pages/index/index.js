@@ -20,7 +20,7 @@ Page({
     },
     onLoad() {
         this.banner = App.HttpResource('/banner/:id', {id: '@id'})
-        this.goods = App.HttpResource('/goods/:id', {id: '@id'})
+        this.goods = App.HttpResource('goodsInfo/findList', {id: '@id'})
         this.classify = App.HttpResource('/classify/:id', {id: '@id'})
 
         this.getBanners()
@@ -82,8 +82,10 @@ Page({
                     navList: data.data.items,
                     'goods.params.type': data.data.items[activeIndex]._id
                 })
+                console.log(data.data.items[activeIndex]._id);
                 this.onPullDownRefresh()
             }
+            this.onPullDownRefresh()
         })
     },
     getList() {
@@ -94,15 +96,17 @@ Page({
         this.goods.queryAsync(params)
         .then(data => {
             console.log(data)
-            if (data.meta.code == 0) {
-                data.data.items.forEach(n => n.thumb_url = App.renderImage(n.images[0] && n.images[0].path))
-                goods.items = [...goods.items, ...data.data.items]
-                goods.paginate = data.data.paginate
-                goods.params.page = data.data.paginate.next
-                goods.params.limit = data.data.paginate.perPage
+            if (data.length> 0) {
+                data.forEach(n => n.thumb_url = App.renderImage(n.goodsimg1 && n.goodsimg2))
+                goods.items = [...goods.items, ...data]
+                console.log(goods)
+                // goods.paginate = data.data.paginate
+                // goods.params.page = data.data.paginate.next
+                // goods.params.limit = data.data.paginate.perPage
                 this.setData({
                     goods: goods,
-                    'prompt.hidden': goods.items.length,
+                    //'prompt.hidden': goods.items.length,
+                    "goods.paginate.total":1,
                 })
             }
         })
@@ -134,5 +138,17 @@ Page({
             goods: goods,
         })
         this.getList()
+    },
+    onShareAppMessage: function () {
+        return {
+        title: '自定义分享标题',
+        path: '/pages/address/list/index',
+        success: function(res) {
+            // 分享成功
+        },
+        fail: function(res) {
+            // 分享失败
+        }
+        }
     },
 })

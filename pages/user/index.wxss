@@ -59,3 +59,304 @@
 	border-bottom: 1rpx solid #D9D9D9;
 	color: #D9D9D9;
 }
+
+
+
+.personal-orders,.personal-list,.personal-logout,.personal-wrapper-1,.personal-wrapper-2{
+	background-color:#fff;
+	font-size: 14px;
+}
+.personal-orders{
+	background-color:#fff;
+	position:relative;
+	font-size:14px;
+	width:100%;
+}
+.personal-orders .p-orders{
+	display: block;
+	height:30px;
+	background-color:#fff;
+	line-height:30px;	
+	width: 100%;
+	overflow:hidden;
+	position:relative;
+	border-bottom:3px solid #ededed;
+}
+.personal-orders .p-orders .p-all-orders{
+	color:#151516;
+	float:left;
+	padding-left:10px;
+	font-size:20px;
+	width:50%;
+}
+.personal-orders .p-orders .p-all-orders-span{
+	color:#9c9c9c;
+	float:right;
+	font-size:14px;
+	padding-right:10px;
+}
+.p-bubble{
+	color:#e02e24;
+	height:50px;
+	width: 50px;
+	/*line-height:50px;*/
+	font-size:14px;
+	/*padding-top:3px;*/
+	/*position:absolute;*/
+	top: 5px;
+}
+/*.personal-orders .p-orders:before{
+	content:"";
+	font-size:14px;
+	color:#9c9c9c;
+	line-height:20px;
+	font-weight:400;
+	-webkit-font-smoothing:antialiased;
+	position:absolute;	
+}
+.p-orders:before{
+	font-family:icomoon;
+}*/
+.personal-wrapper-1{
+	height:70px;
+	overflow:hidden;
+	position:relative;
+	/*top:25px;*/
+	width:100%;
+	padding-bottom: 10px;
+	border-bottom: 10px solid #ededed;
+	
+}
+.personal-wrapper-1 .p-wrapper-1-item{
+	position:relative;
+	display:inline-block;
+	float:left;
+	margin-left: 20px;
+	margin-top:5px; 
+	height:inherit;
+	text-align:center;
+	/*width:20%;*/
+}
+.pic{
+	background-image:url("http://cdn.yangkeduo.com/assets/img/personal_sprite_v8-2d07650b8c.png");
+    width: 45x;
+    height:45px;
+    /*background-position:-247px -314px;*/
+}
+.personal-wrapper-1 .p-wrapper-1-item .p-wrap-1-title{
+	color:#151516;
+	font-size:14px;
+	line-height:20px;
+	position:relative;
+	padding-left: 5px;	
+}
+/*.personal-wrapper-1 .p-wrapper-1-item .p-complaint,.personal-wrapper-1 .p-wrapper-1-item .p-grouping,.personal-wrapper-1 .p-wrapper-1-item .p-unrated,.personal-wrapper-1 .p-wrapper-1-item .p-unreceived,.personal-wrapper-1 .p-wrapper-1-item .p-unshipping{
+	height:50px;
+	margin:10px auto 15px;
+	width:50px;
+}*/
+.personal-wrapper-1 .p-wrapper-1-item .p-unpaid{
+	background-position:-247px -314px;
+}
+
+.personal-wrapper-1 .p-wrapper-1-item .p-grouping{
+	background-position:0 -314px;
+}
+.personal-wrapper-1 .p-wrapper-1-item .p-unshipping{
+	background-position:-99px -314px;
+}
+.personal-wrapper-1 .p-wrapper-1-item .p-unreceived{
+	background-position:-50px -314px;
+}
+.personal-wrapper-1 .p-wrapper-1-item .p-unrated{
+	background-position:-150px -314px;
+}
+.pic2{
+	background-image:url("http://cdn.yangkeduo.com/assets/img/personal_sprite_v8-2d07650b8c.png");
+    width: 60px;
+    height:55px;
+    /*background-position:-247px -314px;*/
+}
+/*.personal-wrapper-1 .p-wrapper-1-item .p-complaint{
+	background-position:-1rem -1.55rem;
+}*/
+
+.bg-img,.personal-download-app .p-download-txt:before{
+	background-repeat:no-repeat;
+	background-size:48px 45px;
+}
+.bg-img{
+	position:relative;
+	background-image:url("http://cdn.yangkeduo.com/assets/img/personal_sprite_v8-2d07650b8c.png");
+}
+
+.personal-wrapper-2{
+	height:80px;
+	padding-top:5px;
+	overflow:hidden;
+	position:relative;
+	padding-bottom: 10px;
+	width:100%;
+	border-bottom: 10px solid #ededed;
+}
+.personal-wrapper-2 .p-wrapper-2-item{
+	display:inline-block;
+	float:left;
+	height:inherit;
+	margin-top: 5px;
+	margin-left: 22px;
+	text-align:center;
+	/*width:25%;*/
+}
+.personal-wrapper-2 .p-wrapper-2-item .p-wrap-2-title{
+	color:#151516;
+	font-size:14px;
+	line-height:20px;
+	position:relative;
+}
+/*.personal-wrapper-2 .p-wrapper-2-item .p-after-sales,.personal-wrapper-2 .p-wrapper-2-item .p-coupons,.personal-wrapper-2 .p-wrapper-2-item .p-likes,.personal-wrapper-2 .p-wrapper-2-item .p-lotteries,.personal-wrapper-2 .p-wrapper-2-item .p-messages{
+	height:20px;
+	margin:5px auto 10px;
+	width:100px;
+}*/
+.personal-wrapper-2 .p-wrapper-2-item .p-messages{
+	background-position:0 -366px;
+}
+.personal-wrapper-2 .p-wrapper-2-item .p-coupons{
+	background-position:-60px -366px;
+}
+.personal-wrapper-2 .p-wrapper-2-item .p-likes{
+	background-position:-356px -366px;
+}
+.personal-wrapper-2 .p-wrapper-2-item .p-after-sales{
+	/*width:100px;
+	height:20px;*/
+	background-position:-297px -366px;
+}
+
+
+.personal-list{
+	height:auto;
+	padding-top:5px;
+	padding-left:10px;
+	position:relative;
+	width:100%;
+}
+.personal-list li{
+	position:relative;
+	display:block;
+	height:50px;
+	line-height:50px;
+	border-bottom:1px solid #ededed;
+}
+.personal-list li .p-addresses,.personal-list li .p-group-free,.personal-list li .p-groups,.personal-list li .p-invite-txt,.personal-list li .p-partners,.personal-list li .p-setting,.personal-list li .p-small-lotteries,.personal-list li .p-suggestions{
+	color:#151516;
+	font-size:20px;
+	margin-left:5px;
+	position:relative;
+}
+.personal-list li .p-addresses:before,.personal-list li .p-group-free:before,.personal-list li .p-groups:before,.personal-list li .p-invite-txt:before,.personal-list li .p-partners:before,.personal-list li .p-setting:before,.personal-list li .p-small-lotteries:before,.personal-list li .p-suggestions:before{
+	background-image:url("http://cdn.yangkeduo.com/assets/img/personal_sprite_v8-2d07650b8c.png");
+	background-repeat:no-repeat;
+	/*background-size:45px 45px;*/
+	content:"";
+	height:45px;
+	/*left:10px;*/
+	/*margin-top:5px;*/
+	position:absolute;
+	/*top:50%;*/
+	width:45px;
+}
+.st3{
+	padding-left: 60px;
+}
+.personal-list li:last-child{
+	border-bottom:none;
+}
+/*.personal-list li:before{
+	content:"";
+	font-size:14px;
+	color:#9c9c9c;
+	line-height:20px;
+	position:absolute;
+	top:5px;
+}
+.personal-logout,.personal-space{
+	position:relative;
+	width:100%;
+}*/
+.personal-list .p-groups:before{
+	background-position:-504px -421px;
+}
+.personal-list .p-group-free:before{
+	background-position:-548px -421px;
+}
+.personal-list .p-addresses:before{
+	background-position:-88px -421px;
+}
+/*.personal-list .p-suggestions:before{
+	background-position:-.5rem -2.12rem;
+}
+.personal-list .p-invite-txt:before{
+	background-position:-.91rem -2.12rem;
+}*/
+.personal-list .p-setting:before{
+	background-position:-272px -421px;
+}
+.personal-list .p-small-lotteries:before{
+	background-position:-456px -421px;
+}
+/*.personal-list .p-invite-btn{
+	color:#e02e24;
+	float:right;
+	font-size:14px;
+	margin-right:10px;
+}
+.personal-download-app .p-download-btn:before,.personal-list li:before{
+	font-family:icomoon;
+	font-weight:400;
+	-webkit-font-smoothing:antialiased;
+	right:10px;
+}
+.personal-download-app{
+	background-color:#fff;
+	height:20px;
+	line-height:20px;
+	margin-top:5px;
+	overflow:hidden;
+	position:relative;
+	width:100%;
+}
+.personal-download-app .p-download-txt{
+	color:#151516;
+	font-size:14px;
+	margin-left:10px;
+	position:relative;
+}
+.personal-download-app .p-download-txt:before{
+	background-image:url("http://cdn.yangkeduo.com/assets/img/personal_sprite_v8-2d07650b8c.png");
+	background-position:-.91rem -2.12rem;
+	content:"";
+	height:20px;
+	left:10px;
+	margin-top:5px;
+	position:absolute;
+	top:50%;
+	width:100px;
+}
+.personal-download-app .p-download-btn{
+	color:#e02e24;
+	float:right;
+	font-size:14px;
+	margin-right:10px;
+}
+.personal-download-app .p-download-btn:before{
+	content:"";
+	font-size:14px;
+	color:#9c9c9c;
+	line-height:20px;
+	position:absolute;
+	top:5px;
+}
+
+*/

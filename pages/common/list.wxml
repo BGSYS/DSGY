@@ -1,23 +1,60 @@
-<import src="../common/prompt.wxml"/>
-
+<import src="../common/prompt.wxml" />
 <template name="list">
-    <template is="prompt" data="{{ prompt }}"/>
-    
-	<view class="scroll-list">
-		<view class="weui-panel weui-panel_access" wx:if="{{ !!goods.paginate.total }}">
-            <view class="weui-panel__bd">
-                <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{ goods.items }}" wx:key="" bindtap="navigateTo" data-id="{{ item._id }}">
-                    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                        <image class="weui-media-box__thumb" src="{{ item.thumb_url }}" />
-                    </view>
-                    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                        <view class="weui-media-box__title">{{ item.name }}</view>
-                        <view class="weui-media-box__desc">
-                            <text class="text-orangered">¥ {{ item.price }}</text>
-                        </view>
-                    </view>
-                </navigator>
-            </view>
+  <template is="prompt" data="{{ prompt }}" />
+  <view class="scroll-list" data-reactid="104">
+
+    <view class="base-list-wrapper"  wx:if="{{ !!goods.paginate.total }}">
+      <!--<view class="portal-list-item" data-reactid="105">-->
+      <navigator url="" class="portal-list-item" hover-class="weui-cell_active" wx:for="{{ goods.items }}" wx:key="" bindtap="navigateTo" data-id="{{item.goodsid}}">
+        <view class="bg_c"></view>
+        <view class="std-goods-image" data-log="{&quot;goodsID&quot;:4058662,&quot;event&quot;:&quot;goods_show&quot;,&quot;pageName&quot;:&quot;index&quot;,&quot;eventType&quot;:1,&quot;isApp&quot;:0,&quot;index&quot;:0}" data-reactid="106">
+          <image data-url="http://omsproductionimg.yangkeduo.com/images/goods/197993/PWfGV7ZOypK7IBMAousU15LQOW63lcoB.jpg@750w_1l_50Q.webp" data-index="0" data-reactid="107" src="{{ item.thumb_url }}" mode="aspectFill" />
         </view>
-	</view>
+        <view class="goods-name" data-reactid="108">
+
+          <!-- react-text: 109 -->{{ item.goodsname }}<!-- /react-text -->
+        </view>
+        <view class="detail" data-reactid="110">
+          <view class="left-side" data-reactid="111">
+            <view class="sale-price" data-reactid="112">
+              <i data-reactid="113">¥</i>
+              <!-- react-text: 114 --> {{ item.goodssum }}<!-- /react-text -->
+            </view>
+            <view class="group-desc" data-reactid="115">
+              <span data-reactid="116">
+                                <!-- react-text: 117 -->{{item.groupbuypcount}}<!-- /react-text -->
+                                <!-- react-text: 118 -->人团<!-- /react-text -->
+                                <i data-reactid="119">·</i>
+                                <!-- react-text: 120 -->单买价<!-- /react-text -->
+                                <!-- react-text: 121 -->379<!-- /react-text -->
+                                <!-- react-text: 122 -->元<!-- /react-text -->
+                            </span> 
+            </view>
+          </view>
+          <view class="right-side" data-reactid="123">
+            <view class="local-groups" style="display:none;" data-reactid="124">
+              <span data-reactid="125"></span> 
+            </view>
+            <view class="enter-button enter-button-arrow" data-reactid="126">去开团</view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+
+    <!--<view class="weui-panel weui-panel_access" wx:if="{{ !!goods.paginate.total }}">
+      <view class="weui-panel__bd">
+        <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active" wx:for="{{ goods.items }}" wx:key="" bindtap="navigateTo" data-id="{{ item._id }}">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{ item.thumb_url }}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__title">{{ item.name }}</view>
+            <view class="weui-media-box__desc">
+              <text class="text-orangered">¥ {{ item.price }}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>-->
+  </view>
 </template>

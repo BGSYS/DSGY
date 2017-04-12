@@ -1,21 +1,43 @@
 <view class="container">
-    <view class="swiper-container">
-        <swiper class="swiper-box" indicator-dots="{{ indicatorDots }}" vertical="{{ vertical }}" autoplay="{{ autoplay }}" interval="{{ interval }}" duration="{{ duration }}" bindchange="swiperchange">
-            <block wx:for="{{ goods.item.images }}" wx:key="">
-                <swiper-item>
-                    <image src="{{ item.path }}" class="slide-image" data-index="{{ index }}" bindtap="previewImage" />
-                </swiper-item>
-            </block>
-        </swiper>
-        <view class="swiper-pager">{{ current + 1 }} / {{ total }}</view>
-    </view>
-    <view class="shopping-container">
-        <view class="name">{{ goods.item.name }}</view>
-        <view class="price">¥ {{ goods.item.price }}</view>
-        <text class="remark">{{ goods.item.remark }}</text>
-    </view>
-    <view class="btn-plus" bindtap="addCart">
+  <view class="swiper-container">
+    <swiper class="swiper-box" indicator-dots="{{ indicatorDots }}" vertical="{{ vertical }}" autoplay="{{ autoplay }}" interval="{{ interval }}" duration="{{ duration }}" bindchange="swiperchange">
+      <block wx:for="{{ goods.item.imgs }}" wx:key="">
+        <swiper-item>
+          <image src="{{item.path}}" class="slide-image" data-index="{{ index }}" bindtap="previewImage" />
+          <text>{{item.path}}</text>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="swiper-pager">{{ current + 1 }} / {{ total }}</view>
+  </view>
+  <view class="shopping-container">
+    <view class="name">{{ goods.item.goodsname }}</view>
+    <view class="price">¥ {{ goods.item.goodssum }}</view>
+    <text class="remark">{{ goods.item.goodsdepict }}</text>
+  </view>
+
+  <!--<view class="btn-plus" bindtap="addCart">
         <image class="icon" src="../../../assets/images/iconfont-plus-circle.png" />
         <text>加入购物车</text>
-    </view>
+    </view>-->
+</view>
+<view class="goods-bottom-bar" data-reactid="58">
+  <view class="goods-home-button" data-reactid="59">
+    <image src="../../../assets/images/iconfont-home.png" mode="aspectFit"></image>
+    <span data-reactid="60">首页</span> 
+  </view>  
+  <view class="goods-direct-btn" data-reactid="65">
+    <span class="goods-buy-price" data-reactid="66">
+        <i data-reactid="67">￥</i>
+        <!-- react-text: 68 -->150<!-- /react-text -->
+    </span> 
+    <span data-reactid="69">单独购买</span> 
+  </view>
+  <view class="goods-group-btn" data-reactid="70">
+    <span class="goods-buy-price" data-reactid="71">
+        <i data-reactid="72">￥</i>
+        <!-- react-text: 73 -->1<!-- /react-text -->
+    </span> 
+    <span data-reactid="74">一键开团</span> 
+  </view>
 </view>

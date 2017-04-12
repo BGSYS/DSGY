@@ -36,6 +36,23 @@ Page({
         console.log(e)
         App.WxService.navigateTo('/pages/address/add/index')
     },
+    toAddWXAdd(e) {
+        console.log(e);
+        wx.chooseAddress({
+            success: function (res) {
+                console.log(res);
+                console.log(res.userName)
+                console.log(res.postalCode)
+                console.log(res.provinceName)
+                console.log(res.cityName)
+                console.log(res.countyName)
+                console.log(res.detailInfo)
+                console.log(res.nationalCode)
+                console.log(res.telNumber)
+            }
+        });
+        // App.WxService.navigateTo('/pages/address/addwx/index')
+    },
     setDefalutAddress(e) {
         const id = e.currentTarget.dataset.id
         App.HttpService.setDefalutAddress(id)

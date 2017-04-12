@@ -172,7 +172,6 @@ class Resource {
 					target = arguments[ i ] || {}
 					i++
 				}
-
 				if (typeof target !== 'object' && !this.isFunction(target)) {
 					target = {}
 				}

@@ -26,6 +26,13 @@ class HttpResource {
 	 * 设置请求路径
 	 */
 	setUrl(url) {
+
+        if(url.indexOf('goodsInfo')!==-1){
+            return `${__config.selfPath}${url}`
+            getGoodsInfo
+        }
+
+
 		return `${__config.basePath}${url}`
 	}
 
