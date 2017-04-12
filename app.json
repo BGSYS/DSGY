@@ -1,9 +1,9 @@
 {
-  "pages": [
-    "pages/address/list/index",
+  "pages": [    
     "pages/index/index",
     "pages/classify/index",
     "pages/cart/index",
+    "pages/address/list/index",
     "pages/address/add/index",
     "pages/address/addwx/index",
     "pages/address/edit/index",
