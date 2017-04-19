@@ -20,7 +20,7 @@ Page({
     },
     onLoad() {
         this.banner = App.HttpResource('/banner/:id', {id: '@id'})
-        this.goods = App.HttpResource('goodsInfo/findList', {id: '@id'})
+        this.goods = App.HttpResource('/goodsInfo/findList', {id: '@id'})
         this.classify = App.HttpResource('/classify/:id', {id: '@id'})
 
         this.getBanners()
@@ -95,11 +95,11 @@ Page({
         // App.HttpService.getGoods(params)
         this.goods.queryAsync(params)
         .then(data => {
-            console.log(data)
+            //console.log(data)
             if (data.length> 0) {
                 data.forEach(n => n.thumb_url = App.renderImage(n.goodsimg1 && n.goodsimg2))
                 goods.items = [...goods.items, ...data]
-                console.log(goods)
+                //console.log(goods)
                 // goods.paginate = data.data.paginate
                 // goods.params.page = data.data.paginate.next
                 // goods.params.limit = data.data.paginate.perPage

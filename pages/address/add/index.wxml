@@ -16,7 +16,7 @@
                 <view class="weui-label">收货人</view>
             </view>
             <view class="weui-cell__bd">
-                <input name="name" value="{{ form.name }}" class="weui-input" type="text" placeholder="请输入收货人姓名" />
+                <input name="receivername" value="{{ form.receivername }}" class="weui-input" type="text" placeholder="请输入收货人姓名" />
             </view>
         </view>
         <view class="weui-cell weui-cell_input">
@@ -24,7 +24,7 @@
                 <view class="weui-label">联系电话</view>
             </view>
             <view class="weui-cell__bd">
-                <input name="tel" value="{{ form.tel }}" class="weui-input" type="tel" placeholder="请输入收货人电话" />
+                <input name="receiverphone" value="{{form.receiverphone }}" class="weui-input" type="text" placeholder="请输入收货人电话" />
             </view>
         </view>
         <view class="weui-cell weui-cell_textarea">
@@ -32,22 +32,69 @@
                 <view class="weui-label">联系地址</view>
             </view>
             <view class="weui-cell__bd">
-                <textarea name="address" value="{{ form.address }}" class="weui-textarea" placeholder="请输入收货人地址" style="height: 3.3em" />
-                <view class="weui-textarea-icon" bindtap="chooseLocation">
+                <view class="input">
+                    <!--<textarea placeholder="选择" class="weui-textarea" value="{{province}}-{{city}}-{{county}}" focus="{{focus}}" bindfocus="open" style="height: 3.3em"/>-->
+                    <textarea name="province" value="{{province}}" class="address-input" type="text" placeholder="省" focus="{{focus}}" bindfocus="open"/>
+                    <textarea name="city" value="{{city}}" class="address-input" type="text" placeholder="市"  focus="{{focus}}" bindfocus="open"/>
+                    <textarea name="county" value="{{county}}" class="address-input" type="text" placeholder="县/区"  focus="{{focus}}" bindfocus="open"/>
+                </view>
+                <!--<textarea name="address" value="{{ form.receiverdetailed }}" class="weui-textarea" placeholder="请输入收货人地址" style="height: 3.3em" />-->
+                <!--<view class="weui-textarea-icon" bindtap="chooseLocation">
                     <image src="../../../assets/images/iconfont-addr-default.png"></image>
+                </view>-->
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_textarea">
+            <view class="weui-cell__hd">
+                <view class="weui-label">详细地址</view>
+            </view>
+            <view class="weui-cell__bd">
+                <view class="input">                    
+                    <textarea name="receiverdetailed" value="{{ form.receiverdetailed }}" class="weui-textarea" placeholder="请输入收货人地址" style="height: 2em" />
+                    <view class="weui-textarea-icon" bindtap="chooseLocation">
+                        <image src="../../../assets/images/iconfont-addr-default.png"></image>
+                    </view>
                 </view>
             </view>
         </view>
-    </view>
-    <view class="weui-cells" wx:if="{{ show }}">
+        <input name="openid" value="{{ form.openid }}" class="weui-input" type="text" placeholder="请输入收货人姓名" style="display:none"/>
+    <!--</view>-->
+    
         <view class="weui-cell weui-cell_switch">
             <view class="weui-cell__bd">设为默认</view>
             <view class="weui-cell__ft">
-                <switch name="is_def" checked="{{ form.is_def }}" />
+                <switch name="userflag" checked="{{ form.userflag }}" />
             </view>
         </view>
     </view>
-    <view class="button-sp-area">
+        <view class="button-sp-area">
         <button class="weui-btn" type="primary" formType="submit">确定</button>
     </view>
 </form>
+
+
+
+<view class="container">
+
+  
+
+  
+  
+</view>
+<view wx:if="{{condition}}" class="citypicker">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+    <view class="cityheader">
+      <view bindtap="open" class="city-cancel">取消</view>
+      <view bindtap="open" class="city-true">确定</view>
+    </view>
+    <picker-view-column>
+      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>

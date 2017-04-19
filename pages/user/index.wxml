@@ -28,11 +28,8 @@
     </view>
   </view>
   <view class="logout" bindtap="logout">登出账号</view>-->
-</view>
 
-
-
-<view class="personal-orders">
+  <view class="personal-orders">
   <view class="p-orders">
     <span class="p-all-orders">我的订单</span> 
     <span class="p-all-orders-span">查看全部</span> 
@@ -117,12 +114,7 @@
   <span class="p-download-btn">立即前往</span> 
 </view>-->
 <view class="personal-list">
-  <ul>
-    <!--<li ms-if="showInvite" ms-click="gotoInvite">
-      <span class="p-invite-txt">邀友有奖</span> 
-      <span class="p-invite-btn">最高可得20元</span> 
-      <img ms-src="arrowImg" class="p-arrow-img"></img>
-    </li>-->
+  <ul>    
     <li ms-click="gotoLotteries">
       <p class="p-small-lotteries">
         <text class="st3">我的抽奖</text>
@@ -151,3 +143,8 @@
     </li>
   </ul>
 </view>
+
+</view>
+
+
+

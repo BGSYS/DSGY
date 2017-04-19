@@ -27,9 +27,8 @@ class HttpResource {
 	 */
 	setUrl(url) {
 
-        if(url.indexOf('goodsInfo')!==-1){
+        if(url.indexOf('goodsInfo')!=-1||(url.indexOf('address')!=-1)){
             return `${__config.selfPath}${url}`
-            getGoodsInfo
         }
 
 
@@ -44,8 +43,12 @@ class HttpResource {
             request: (request) => {
                 request.header = request.header || {}
                 request.requestTimestamp = new Date().getTime()
-                if (request.url.indexOf('/api') !== -1 && wx.getStorageSync('token')) {
-                    request.header.Authorization = 'Bearer ' + wx.getStorageSync('token')
+                if ((request.url.indexOf('/api') !== -1||request.url.indexOf('/a/') !== -1) && wx.getStorageSync('token')) {
+                    if(request.method=="GET"){
+                        request.header.Authorization = 'Bearer ' + wx.getStorageSync('token');
+                    }else{
+                        request.header={"Content-Type": "application/x-www-form-urlencoded"};
+                    }                     
                 }
                 wx.showToast({
                     title: '加载中', 
