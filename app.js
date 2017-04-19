@@ -30,7 +30,7 @@ App({
 	},
 	globalData: {
 		userInfo: null,
-		openid:null
+		openid:'oSbkI0UDsjjXZj_Pr_-0EQJBAZBU'
 	},
 	renderImage(path) {
 		if (!path) return ''

@@ -158,7 +158,7 @@ icon {
 }
 .weui-input {
   height: 2.58823529em;
-  min-height: 2.58823529em;
+  /*min-height: 2.58823529em;*/
   line-height: 2.58823529em;
 }
 .weui-toptips {
@@ -834,7 +834,7 @@ icon {
   border-left: 1px solid #CECECE;
 }
 .weui-media-box__title_in-text {
-  margin-bottom: 8px;
+  /*margin-bottom: 8px;*/
 }
 .weui-media-box_appmsg {
   display: -webkit-box;
