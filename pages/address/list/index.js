@@ -13,6 +13,7 @@ Page({
     onLoad() {
         this.address = App.HttpResource('/address/:id', {id: 'myaddress'} );
         this.addresswx = App.HttpResource('/address/add');
+        this.addressDefalut = App.HttpResource('/address/addressflag');
         ///address/:id',myaddress/:userId{userId:'oSbkI0UDsjjXZj_Pr_-0EQJBAZB'})
         this.onPullDownRefresh()
     },
@@ -21,12 +22,12 @@ Page({
             address: {
                 items: [],
                 params: {
-                    page : 1,
-                    limit: 10,
-                    userId:App.globalData.openid,
+                    // page : 1,
+                    // limit: 10,
+                    openId:App.globalData.openid,
                 },
                 paginate: {}
-            }
+            },
         })
     },
     toAddressEdit(e) {
@@ -66,9 +67,7 @@ Page({
                 }
             });
         // App.WxService.navigateTo('/pages/address/addwx/index')
-	    })
-
-		
+	    });		
     },
     showToast(message) {
 		App.WxService.showToast({
@@ -79,13 +78,17 @@ Page({
 		// .then(() => App.WxService.navigateBack())
 	},
     setDefalutAddress(e) {
-        const id = e.currentTarget.dataset.id
-        App.HttpService.setDefalutAddress(id)
+        const params = this.data.address.params;
+        const id = e.currentTarget.dataset.id;
+        params.addidnew=id;
+        //App.HttpService.setDefalutAddress(id)
+        this.addressDefalut.saveAsync(params)
         .then(data => {
-            console.log(data)
-            if (data.meta.code == 0) {
-                this.onPullDownRefresh()
-            }
+            console.log(data);
+            this.onPullDownRefresh();
+            // if (data.meta.code == 0) {
+            //     this.onPullDownRefresh()
+            // }
         })
     },
     getList() {

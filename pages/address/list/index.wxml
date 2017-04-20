@@ -10,12 +10,18 @@
                     <view class="weui-media-box__title weui-media-box__title_in-text">{{ item.receivername }} {{ item.gender === 'female' ? '女士' : '先生' }} {{ item.receiverphone }}</view>
                     <view class="weui-media-box__desc">{{ item.province}}{{item.city}}{{ item.receiverzone }}{{ item.receiverdetailed}}</view>
                     <view class="weui-media-box__info">
-                        <view class="weui-media-box__info__meta text-orangered" wx:if="{{ item.is_def }}">默认地址</view>
-                        <view class="weui-media-box__info__meta" wx:if="{{ !item.is_def }}" bindtap="setDefalutAddress" data-id="{{ item._id }}">设为默认</view>
+                        <view class="weui-media-box__info__meta text-orangered" wx:if="{{ item.addressflag==1 }}">默认地址</view>
+                        <view class="weui-media-box__info__meta" wx:else bindtap="setDefalutAddress" data-id="{{ item.addressid }}">设为默认</view>
+                        <view class="edit" bindtap="toAddressEdit" data-id="{{ item.addressid }}">
+                            <image class="icon" src="../../../assets/images/iconfont-edit.png"/>编辑
+                        </view>
+                        <view  bindtap="toAddressEdit" data-id="{{ item.addressid }}">
+                            <image class="icon" src="../../../assets/images/iconfont-edit.png"/>编辑
+                        </view>
                     </view>
-                    <view class="edit" bindtap="toAddressEdit" data-id="{{ item.addressid }}">
+                    <!--<view class="edit" bindtap="toAddressEdit" data-id="{{ item.addressid }}">
                         <image class="icon" src="../../../assets/images/iconfont-edit.png" />
-                    </view>
+                    </view>-->
                 </view>
             </view>
         </view>

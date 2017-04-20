@@ -9,15 +9,32 @@
 
 .address-list .edit {
 	position: absolute;
-	top: 50%;
-	right: 15px;
-	width: 20px; 
+	/*top: 50%;*/
+	right: 55px;
+	bottom: 20px;
+	width: 50px; 
     height: 20px;
-    -webkit-transform: translate3d(0, -50%, 0);
-    transform: translate3d(0, -50%, 0);
+	display: block;
+    /*-webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);*/
+}
+.address-list .edit:after {
+	position: absolute;
+	/*top: 50%;*/
+	right: 55px;
+	bottom: 20px;
+	width: 50px; 
+    height: 20px;
+	display: block;
+    /*-webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);*/
 }
 
 .address-list .edit .icon {
+    width: 20px; 
+    height: 20px;
+}
+.icon {
     width: 20px; 
     height: 20px;
 }

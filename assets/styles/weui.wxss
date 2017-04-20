@@ -545,6 +545,10 @@ icon {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
+  height: 35px;  
+    padding-left: 15px;
+    padding-right: 15px;
+  font-size: 14px;
 }
 .weui-btn {
   margin-top: 15px;
@@ -1050,9 +1054,9 @@ icon {
 }
 image{  
   /*width:300px;
-  height:200px;
   align-self: center;*/
   display: inline-block;
+  height:190px;
 }
 .portal-list-item .goods-name{
   font-size:14px;
@@ -1068,8 +1072,8 @@ image{
 .portal-list-item .detail{
   position:relative;
   width:95%;
-  height:22px;
-  line-height: 22px;
+  height:30px;
+  line-height: 30px;
   margin:5px auto;
   display:-webkit-box;
   display:-ms-flexbox;
@@ -1083,6 +1087,7 @@ image{
   -ms-flex-align:center;
   align-items:center;
   -webkit-align-items:center;
+  padding-bottom: 5px;
 }
 .portal-list-item .detail .left-side{
   display:-webkit-box;
@@ -1143,8 +1148,8 @@ image{
   background-position:100px 50px;
   position:relative;
   width:80px;
-  height:22px;
-  line-height:22px;
+  height:30px;
+  line-height:30px;
   text-align:center;
   border-radius:4px;
   font-size:14px;

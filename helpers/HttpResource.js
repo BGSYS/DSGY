@@ -30,8 +30,6 @@ class HttpResource {
         if(url.indexOf('goodsInfo')!=-1||(url.indexOf('address')!=-1)){
             return `${__config.selfPath}${url}`
         }
-
-
 		return `${__config.basePath}${url}`
 	}
 

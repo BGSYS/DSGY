@@ -19,21 +19,21 @@ Page({
         // console.log(e.detail.current)
     },
     onLoad() {
-        this.banner = App.HttpResource('/banner/:id', {id: '@id'})
-        this.goods = App.HttpResource('/goodsInfo/findList', {id: '@id'})
-        this.classify = App.HttpResource('/classify/:id', {id: '@id'})
+        this.banner = App.HttpResource('/goodsInfo/headImg');//, {id: '@id'}
+        this.goods = App.HttpResource('/goodsInfo/findListByClassId')//'/classify/getClassifyGoodIndex'
+        this.classify = App.HttpResource('/classify/getTypeClassifyList');
 
         this.getBanners()
         this.getClassify()
     },
     initData() {
-        const type = this.data.goods.params && this.data.goods.params.type || ''
+        const goodsclassify = this.data.goods.params && this.data.goods.params.goodsclassify || ''
         const goods = {
             items: [],
             params: {
-                page : 1,
-                limit: 10,
-                type : type,
+                // page : 1,
+                // limit: 10,
+                goodsclassify : goodsclassify,
             },
             paginate: {}
         }
@@ -48,71 +48,69 @@ Page({
             id: e.currentTarget.dataset.id
         })
     },
-    search() {
-        App.WxService.navigateTo('/pages/search/index')
-    },
+    // search() {
+    //     App.WxService.navigateTo('/pages/search/index')
+    // },
     getBanners() {
     	// App.HttpService.getBanners({is_show: !0})
-        this.banner.queryAsync({is_show: !0})
+        this.banner.queryAsync()//{is_show: !0}
         .then(data => {
         	console.log(data)
-        	if (data.meta.code == 0) {
-                data.data.items.forEach(n => n.path = App.renderImage(n.images[0].path))
+        	if (data.headImgs.length > 0) {
+                data.headImgs.forEach(n => n.path = App.renderImage(n.imgurl));
+                console.log(data);
         		this.setData({
-                    images: data.data.items
+                    images: data.headImgs
                 })
         	}
         })
     },
     getClassify() {
-        const activeIndex = this.data.activeIndex
-
-        // App.HttpService.getClassify({
-        //     page: 1, 
-        //     limit: 4, 
-        // })
-        this.classify.queryAsync({
-            page: 1, 
-            limit: 4, 
-        })
+        const activeIndex = this.data.activeIndex;
+        this.classify.queryAsync()
         .then(data => {
             console.log(data)
-            if (data.meta.code == 0) {
+            if (data.classifyList.length> 0) {
                 this.setData({
-                    navList: data.data.items,
-                    'goods.params.type': data.data.items[activeIndex]._id
+                    navList: data.classifyList,
+                    'goods.params.goodsclassify': data.classifyList[activeIndex].classifyid
                 })
-                console.log(data.data.items[activeIndex]._id);
-                this.onPullDownRefresh()
+                console.log(data.classifyList[activeIndex].classifyid);
+                this.abc()
             }
-            this.onPullDownRefresh()
+            this.abc()
         })
     },
     getList() {
+        // const activeIndex = this.data.activeIndex
+        // var good ;
         const goods = this.data.goods
         const params = goods.params
 
         // App.HttpService.getGoods(params)
         this.goods.queryAsync(params)
         .then(data => {
-            //console.log(data)
+            console.log(data)
             if (data.length> 0) {
-                data.forEach(n => n.thumb_url = App.renderImage(n.goodsimg1 && n.goodsimg2))
-                goods.items = [...goods.items, ...data]
-                //console.log(goods)
-                // goods.paginate = data.data.paginate
-                // goods.params.page = data.data.paginate.next
-                // goods.params.limit = data.data.paginate.perPage
+                data.forEach(n => n.thumb_url = App.renderImage(n.goodsimg1));
+                goods.items = [...goods.items, ...data];                
                 this.setData({
                     goods: goods,
-                    //'prompt.hidden': goods.items.length,
                     "goods.paginate.total":1,
                 })
             }
+            // if (data.goodList.length> 0) {
+            //     data.goodList[activeIndex].goodlist.forEach(n => n.thumb_url = App.renderImage(n.goodspic));
+            //     goods.items = [...goods.items, ...data.goodList[activeIndex].goodlist];                
+            //     this.setData({
+            //         goods: goods,
+            //         "goods.paginate.total":1,
+            //     })
+            // }
         })
     },
-    onPullDownRefresh() {
-        console.info('onPullDownRefresh')
+    abc() {
+        console.info('abc')
         this.initData()
         this.getList()
     },
@@ -122,14 +120,14 @@ Page({
         this.getList()
     },
     onTapTag(e) {
-        const type = e.currentTarget.dataset.type
+        const goodsclassify = e.currentTarget.dataset.type
         const index = e.currentTarget.dataset.index
         const goods = {
             items: [],
             params: {
-                page : 1,
-                limit: 10,
-                type : type,
+                // page : 1,
+                // limit: 10,
+                goodsclassify : goodsclassify,
             },
             paginate: {}
         }
