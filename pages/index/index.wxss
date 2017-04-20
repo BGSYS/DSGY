@@ -9,20 +9,28 @@
 
 .topbar {
     background: #fff;
+    /*height:35px;*/
 }
 
-.topbar-item {
+.topbar-item {    
     color: #333;
     text-align: center;
-    padding: 10px 0;
+    line-height: 30px;
+    /*padding: 10px 0;*/
 }
 
 .topbar-item.active {
-    color: #479de6;
+    /*color: #479de6;*/
+    color: red;
+    border-bottom: 1px red solid;
 }
 
 .swiper_box {
+    /*position: absolute;
+    left: 0;
+    top: 0;*/
     width: 100%;
+    height:145px;  
 }
 
 swiper-item image {
@@ -30,3 +38,6 @@ swiper-item image {
     display: inline-block;
     overflow: hidden;
 }
+/*.slide-image{
+    height: 220px;
+}*/

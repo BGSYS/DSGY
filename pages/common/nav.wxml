@@ -1,8 +1,8 @@
 <template name="nav">
     <view class="weui-flex topbar">
       <block wx:for="{{ navList }}" wx:key="">
-        <view data-type="{{ item._id }}" data-index="{{ index }}" class="weui-flex__item" catchtap="onTapTag">
-        	<view class="topbar-item {{ index == activeIndex ? 'active' : '' }}">{{ item.name }}</view>
+        <view data-type="{{ item.classifyid }}" data-index="{{ index }}" class="weui-flex__item" catchtap="onTapTag">
+        	<view class="topbar-item {{ index == activeIndex ? 'active' : '' }}">{{ item.classifyname }}</view>
         </view>
       </block>
     </view>
